@@ -40,5 +40,13 @@ public class UnitEntity extends BaseEntity {
     public String toString() {
         return String.format("[Подразделение ID: %d]: [ Название подразделения: %s ]", getId(), unitName);
     }
+
+    public List<EmployeeEntity> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<EmployeeEntity> employees) {
+        this.employees = employees;
+    }
 }
 

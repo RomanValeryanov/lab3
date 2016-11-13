@@ -1,7 +1,6 @@
 package com.etu.titkov.uniteacher.dao;
 
 import com.etu.titkov.uniteacher.dao.common.GenericJpaDao;
-import com.etu.titkov.uniteacher.entities.SubjectEntity;
 import com.etu.titkov.uniteacher.entities.UnitEntity;
 
 import javax.persistence.EntityManager;

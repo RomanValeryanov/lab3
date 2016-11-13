@@ -41,6 +41,7 @@ public class AppConsole {
                 break;
             case 2:
                 assignEntitiesMenu();
+                break;
             case 3:
                 showSearchMenu();
                 break;
@@ -58,7 +59,12 @@ public class AppConsole {
                 break;
             case 7:
                 SessionManager.terminate();
-                System.exit(0);
+                //CODACY BUG FIX
+                //System.exit(0);
+                break;
+
+            default:
+                System.out.println("Введен неправильный пункт. Давай еще разок");
                 break;
         }
     }
@@ -79,6 +85,10 @@ public class AppConsole {
                 break;
             case 3:
                 showMainMenu();
+                break;
+
+            default:
+                System.out.println("Введен неправильный пункт. Давай еще разок");
                 break;
         }
     }
@@ -106,6 +116,10 @@ public class AppConsole {
                 break;
             case 4:
                 showMainMenu();
+                break;
+
+            default:
+                System.out.println("Введен неправильный пункт. Давай еще разок");
                 break;
         }
     }
@@ -138,6 +152,10 @@ public class AppConsole {
                 break;
             case 4:
                 showMainMenu();
+                break;
+
+            default:
+                System.out.println("Введен неправильный пункт. Давай еще разок");
                 break;
         }
 
