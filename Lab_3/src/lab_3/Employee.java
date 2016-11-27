@@ -18,7 +18,8 @@ enum Gender {
  * Месяцы
  * @author Dron
  */
-enum Month {
+enum Month 
+{
     January,
     February,
     March,
@@ -37,9 +38,11 @@ enum Month {
  * Реалшизация класса Сотрудники
  * @author Dron
  */
-public class Employee {
+public class Employee 
+{
     
-    class Date {
+    class Date 
+    {
         int   day;
         Month month;
         int   year;
@@ -52,10 +55,10 @@ public class Employee {
     private String p_second_name;
     
     /* пол сотрудника */
-    private Gender   p_gender; 
+    private Gender p_gender; 
     
     /* дата рождения сотрудника */
-    private Date p_born_data;
+    private Date p_born_date;
     
     /* Адрес сотрудника */
     private String p_adress;
@@ -64,7 +67,14 @@ public class Employee {
     private String p_position;
     
     /* Подразделение сотрудника */
-    private String p_division;
+    private Division p_division;
+    
+    Employee(String first_name, String second_name, Gender gender)
+    {
+        p_first_name = first_name;
+        p_second_name = second_name;
+        p_gender = gender;
+    }
     
     /**
      * Получение фамилии сотрудника
@@ -97,9 +107,12 @@ public class Employee {
      * Получение даты рождения сотрудника
      * @return p_born_data дата рождения сотрудника
      */
-    public Date getBornData()
+    public String getBornDate()
     {
-        return p_born_data;
+        String result;
+        result = p_born_date.day + "." + p_born_date.month + "." + p_born_date.year;
+        
+        return result;
     }
     
     /**
@@ -124,7 +137,7 @@ public class Employee {
      * Получение подразделения сотрудника
      * @return p_division подразделение сотрудника
      */
-    public String getDivision()
+    public Division getDivision()
     {
         return p_division;
     }
@@ -133,7 +146,7 @@ public class Employee {
      * Задание фамилии сотрудника
      * @param first_name фамилия сотрудника
      */
-    public void getFirstName(String first_name)
+    public void setFirstName(String first_name)
     {
         p_first_name = first_name;
     }
@@ -142,7 +155,7 @@ public class Employee {
      * Задание имени и отчества сотрудника
      * @param second_name имя отчество сотрудника
      */
-    public void getSecondName(String second_name)
+    public void setSecondName(String second_name)
     {
         p_second_name = second_name;
     }
@@ -151,25 +164,30 @@ public class Employee {
      * Задание пола сотрудника
      * @param gender пол сотрудника
      */
-    public void getGender(Gender gender)
+    public void setGender(Gender gender)
     {
         p_gender = gender;
     }
     
     /**
      * Задание даты рождения сотрудника
-     * @param born_data дата рождения сотрудника
+     * @param day день рождения сотрудника
+     * @param month месяц рождения сотрудника
+     * @param year год рождения сотрудника
      */
-    public void getBornData(Date born_data)
+    public void setBornData(int day, Month month, int year)
     {
-        p_born_data = born_data ;
+        p_born_date = new Date();
+        p_born_date.day = day;
+        p_born_date.month = month;
+        p_born_date.year = year;
     }
     
     /**
      * Задание адреса сотрудника
      * @param adress адрес сотрудника
      */
-    public void getAdress(String adress)
+    public void setAdress(String adress)
     {
         p_adress = adress;
     }
@@ -178,7 +196,7 @@ public class Employee {
      * Задание должности сотрудника
      * @param position должность сотрудника
      */
-    public void getPosition(String position)
+    public void setPosition(String position)
     {
         p_position = position;
     }
@@ -187,7 +205,7 @@ public class Employee {
      * Задание подразделения сотрудника
      * @param division подразделение сотрудника
      */
-    public void getDivision(String division)
+    public void setDivision(Division division)
     {
         p_division = division;
     }
