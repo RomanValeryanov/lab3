@@ -1,11 +1,9 @@
 package com.etu.grigorova.otdel_kadrov.dao;
 
-import com.etu.grigorova.otdel_kadrov.dao.DaoExeption;
 import com.etu.grigorova.otdel_kadrov.entities.OriginEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
-import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;

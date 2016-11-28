@@ -87,7 +87,7 @@ public class LabLogic {
         }
     }
 
-    private void findAllEmployeesByUnits () {
+    void findAllEmployeesByUnits () {
         showAllUnits();
         System.out.println("\nВведите id интересующих подразделений: ");
         List<Integer> ids = parseIds();
@@ -96,10 +96,6 @@ public class LabLogic {
         ConsoleOutput consoleOutput = new ConsoleOutput(this);
         consoleOutput.showMainMenu();
     }
-    void getAllEmployeesByUnits(){
-        findAllEmployeesByUnits();
-    }
-
     private List<Integer> parseIds () {
         return Arrays.stream(readLine().replaceAll("[^\\d,]", "").split(","))
                 .map(Integer::valueOf)

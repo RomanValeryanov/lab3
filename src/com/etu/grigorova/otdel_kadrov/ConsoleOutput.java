@@ -61,7 +61,7 @@ public class ConsoleOutput {
                 showDataMenu();
                 break;
             case 2:
-                controller.getAllEmployeesByUnits();
+                controller.findAllEmployeesByUnits();
 //                showAllEmployeesByUnits();
                 break;
             case 3:

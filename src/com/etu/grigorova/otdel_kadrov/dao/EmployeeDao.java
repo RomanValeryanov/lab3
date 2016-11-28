@@ -1,8 +1,6 @@
 package com.etu.grigorova.otdel_kadrov.dao;
 
 import com.etu.grigorova.otdel_kadrov.entities.EmployeEntity;
-import com.etu.grigorova.otdel_kadrov.entities.UnitEntity;
-
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
