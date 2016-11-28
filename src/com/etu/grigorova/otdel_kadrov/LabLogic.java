@@ -13,7 +13,8 @@ public class LabLogic {
 
     private DaoDecor service;
 
-    public LabLogic (DaoDecor service) {
+
+    LabLogic (DaoDecor service) {
         this.service = service;
     }
 
@@ -86,7 +87,7 @@ public class LabLogic {
         }
     }
 
-    void findAllEmployeesByUnits () {
+    private void findAllEmployeesByUnits () {
         showAllUnits();
         System.out.println("\nВведите id интересующих подразделений: ");
         List<Integer> ids = parseIds();
@@ -95,6 +96,9 @@ public class LabLogic {
         ConsoleOutput consoleOutput = new ConsoleOutput(this);
         consoleOutput.showMainMenu();
     }
+    void getAllEmployeesByUnits(){
+        findAllEmployeesByUnits();
+    }
 
     private List<Integer> parseIds () {
         return Arrays.stream(readLine().replaceAll("[^\\d,]", "").split(","))
@@ -102,16 +106,16 @@ public class LabLogic {
                 .collect(Collectors.toList());
     }
 
-    public DaoDecor getService () {
+    DaoDecor getService () {
         return service;
     }
 
-    public static int readInt () {
+    private static int readInt () {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
-    public static String readLine () {
+    private static String readLine () {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder result = new StringBuilder();
         try {
