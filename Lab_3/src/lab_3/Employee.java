@@ -55,22 +55,22 @@ public class Employee
     }
     
     /* фамилия сотрудника */
-    private String p_first_name = null;
+    private String p_first_name = "";
     
     /* имя отчество сотрудника */
-    private String p_second_name = null;
+    private String p_second_name = "";
     
     /* пол сотрудника */
-    private Gender p_gender = null; 
+    private Gender p_gender; 
     
     /* дата рождения сотрудника */
     private Date p_born_date = new Date();
     
     /* Адрес сотрудника */
-    private String p_adress = null;
+    private String p_adress = "";
     
     /* Должность сотрудника */
-    private String p_position = null;
+    private String p_position = "";
     
     /* Подразделение сотрудника */
     private Division p_division = null;
