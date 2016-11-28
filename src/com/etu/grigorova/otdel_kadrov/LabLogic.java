@@ -86,7 +86,7 @@ public class LabLogic {
         }
     }
 
-    public void findAllEmployeesByUnits () {
+    void findAllEmployeesByUnits () {
         showAllUnits();
         System.out.println("\nВведите id интересующих подразделений: ");
         List<Integer> ids = parseIds();
