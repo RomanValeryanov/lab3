@@ -26,13 +26,24 @@ public class Lab_3
         /* Класс PR-отдела */
         Division DivisionPr = new Division("PR", DivisionType.PR);
         
-        Employee emp = new Employee("Ivanov", "Ivan", Gender.Male);
+        Employee emp1 = new Employee("Ivanov", "Ivan", Gender.Male);
 
-        emp.setBornData(1, Month.April, 2001);
-        emp.setAdress("SPB");
-        emp.setDivision(DivisionPr);
+        emp1.setBornData(1, Month.April, 2001);
+        emp1.setAdress("SPB");
+        emp1.setDivision(DivisionPr);
         
-        System.out.println(emp.getBornDate());
+        Employee emp2 = new Employee("Petrov", "Petr", Gender.Male);
+
+        emp2.setBornData(5, Month.May, 1995);
+        emp2.setAdress("SPB");
+        emp2.setDivision(DivisionHr);
+        
+        Employee emp3 = new Employee("Sidorovov", "Ivan", Gender.Male);
+
+        emp3.setBornData(1, Month.April, 2001);
+        emp3.setAdress("SPB");
+        emp3.setDivision(DivisionIt);
+        
     }
     
 }

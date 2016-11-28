@@ -43,31 +43,37 @@ public class Employee
     
     class Date 
     {
-        int   day;
-        Month month;
-        int   year;
+        protected int   day;
+        protected Month month;
+        protected int   year;
+        Date()
+        {
+            day = 1;
+            month = Month.January;
+            year = 1900;
+        }
     }
     
     /* фамилия сотрудника */
-    private String p_first_name;
+    private String p_first_name = null;
     
     /* имя отчество сотрудника */
-    private String p_second_name;
+    private String p_second_name = null;
     
     /* пол сотрудника */
-    private Gender p_gender; 
+    private Gender p_gender = null; 
     
     /* дата рождения сотрудника */
-    private Date p_born_date;
+    private Date p_born_date = new Date();
     
     /* Адрес сотрудника */
-    private String p_adress;
+    private String p_adress = null;
     
     /* Должность сотрудника */
-    private String p_position;
+    private String p_position = null;
     
     /* Подразделение сотрудника */
-    private Division p_division;
+    private Division p_division = null;
     
     Employee(String first_name, String second_name, Gender gender)
     {
@@ -177,7 +183,6 @@ public class Employee
      */
     public void setBornData(int day, Month month, int year)
     {
-        p_born_date = new Date();
         p_born_date.day = day;
         p_born_date.month = month;
         p_born_date.year = year;
