@@ -40,6 +40,26 @@ enum Month
  */
 public class Employee 
 {
+    /* фамилия сотрудника */
+    private String p_first_name;
+    
+    /* имя отчество сотрудника */
+    private String p_second_name;
+    
+    /* пол сотрудника */
+    private Gender p_gender; 
+    
+    /* дата рождения сотрудника */
+    private Date p_born_date = new Date();
+    
+    /* Адрес сотрудника */
+    private String p_adress;
+    
+    /* Должность сотрудника */
+    private String p_position;
+    
+    /* Подразделение сотрудника */
+    private Division p_division = null;
     
     class Date 
     {
@@ -53,27 +73,6 @@ public class Employee
             year = 1900;
         }
     }
-    
-    /* фамилия сотрудника */
-    private String p_first_name = "";
-    
-    /* имя отчество сотрудника */
-    private String p_second_name = "";
-    
-    /* пол сотрудника */
-    private Gender p_gender; 
-    
-    /* дата рождения сотрудника */
-    private Date p_born_date = new Date();
-    
-    /* Адрес сотрудника */
-    private String p_adress = "";
-    
-    /* Должность сотрудника */
-    private String p_position = "";
-    
-    /* Подразделение сотрудника */
-    private Division p_division = null;
     
     Employee(String first_name, String second_name, Gender gender)
     {
