@@ -1,45 +1,42 @@
 package com.zdorovets;
 import java.util.Random;
 /**
- * Класс для генерации данных
+ * РљР»Р°СЃСЃ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РґР°РЅРЅС‹С…
  * @author Evgeny Zdorovets
  * Created on 29/11/16
  */
 public class Generator {
 	/**
-     * Генерирует значения подразделений
-     * @param depCount максимальное кол-во подразделений
+     * Р“РµРЅРµСЂРёСЂСѓРµС‚ Р·РЅР°С‡РµРЅРёСЏ РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№
+     * @param depCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№
      */
     public void generateDepartments(int depCount) {
-    	
             DepartmentName[] names = DepartmentName.values();
             DepartmentType[] types = DepartmentType.values();
-            MainClass.departments = new Department[depCount];
             for (int i = 0; i < depCount; i++) {		
-            	MainClass.departments[i] = new Department(names[i], types[i], i); // выбор имени и типа подразделения по порядку
-                System.out.println("Создано подразделение: имя - \"" + names[i] + "\", тип - " + types[i] + " (индекс - " + i + ")");
+            	MainClass.setDepartment(i, new Department(names[i], types[i], i)); // РІС‹Р±РѕСЂ РёРјРµРЅРё Рё С‚РёРїР° РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ РїРѕ РїРѕСЂСЏРґРєСѓ
+                System.out.println("РЎРѕР·РґР°РЅРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ: РёРјСЏ - \"" + names[i] + "\", С‚РёРї - " + types[i] + " (РёРЅРґРµРєСЃ - " + i + ")");
             }
         }
         /**
-         * Генерирует значения помещений
-         * @param classCount максимальное кол-во помещений
-         * @param depCount максимальное кол-во подразделений
-         * @param maxArea максимальная площадь помещения
+         * Р“РµРЅРµСЂРёСЂСѓРµС‚ Р·РЅР°С‡РµРЅРёСЏ РїРѕРјРµС‰РµРЅРёР№
+         * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
+         * @param depCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№
+         * @param maxArea РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РїР»РѕС‰Р°РґСЊ РїРѕРјРµС‰РµРЅРёСЏ
          */
     public void generateClasses(int classCount, int depCount, int maxArea) {
             ClassroomType[] cTypes = ClassroomType.values();
             Random random = new Random();
-            MainClass.classrooms = new Classroom[classCount];
             for (int i = 0; i < classCount; i++) {
-                int num = i + 1; // выбор номера помещения
-                ClassroomType type = cTypes[random.nextInt(cTypes.length)]; // выбор типа помещения случ. образом
-                float area = random.nextFloat() * maxArea; // выбор площади помещения случ. образом
-                int landingPlaceCount = Math.round(area) / 2; // выбор кол-ва посад. мест помещения
-                int departmentIndex = random.nextInt(depCount); // выбор подразделения помещения случ. образом
-                MainClass.classrooms[i] = new Classroom(num, type, area, landingPlaceCount, MainClass.departments[departmentIndex]);
-                MainClass.departments[departmentIndex].getClasses().add(num); // добавление помещения в список помещений подразделения
-                System.out.println("Создано помещение: номер - " + num + ", тип - " + type + ", площадь - " + area + " кв.м., " +
-                    "количество посадочных мест - " + landingPlaceCount + ", подразделение - " + departmentIndex);
+                int num = i + 1; // РІС‹Р±РѕСЂ РЅРѕРјРµСЂР° РїРѕРјРµС‰РµРЅРёСЏ
+                ClassroomType type = cTypes[random.nextInt(cTypes.length)]; // РІС‹Р±РѕСЂ С‚РёРїР° РїРѕРјРµС‰РµРЅРёСЏ СЃР»СѓС‡. РѕР±СЂР°Р·РѕРј
+                float area = random.nextFloat() * maxArea; // РІС‹Р±РѕСЂ РїР»РѕС‰Р°РґРё РїРѕРјРµС‰РµРЅРёСЏ СЃР»СѓС‡. РѕР±СЂР°Р·РѕРј
+                int landingPlaceCount = Math.round(area) / 2; // РІС‹Р±РѕСЂ РєРѕР»-РІР° РїРѕСЃР°Рґ. РјРµСЃС‚ РїРѕРјРµС‰РµРЅРёСЏ
+                int departmentIndex = random.nextInt(depCount); // РІС‹Р±РѕСЂ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ РїРѕРјРµС‰РµРЅРёСЏ СЃР»СѓС‡. РѕР±СЂР°Р·РѕРј
+                MainClass.setClassroom(i, new Classroom(num, type, area, landingPlaceCount, MainClass.getDepartment(departmentIndex)));
+                MainClass.getDepartment(departmentIndex).getClasses().add(num); // РґРѕР±Р°РІР»РµРЅРёРµ РїРѕРјРµС‰РµРЅРёСЏ РІ СЃРїРёСЃРѕРє РїРѕРјРµС‰РµРЅРёР№ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ
+                System.out.println("РЎРѕР·РґР°РЅРѕ РїРѕРјРµС‰РµРЅРёРµ: РЅРѕРјРµСЂ - " + num + ", С‚РёРї - " + type + ", РїР»РѕС‰Р°РґСЊ - " + area + " РєРІ.Рј., " +
+                    "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕСЃР°РґРѕС‡РЅС‹С… РјРµСЃС‚ - " + landingPlaceCount + ", РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ - " + departmentIndex);
             }
         }
 }

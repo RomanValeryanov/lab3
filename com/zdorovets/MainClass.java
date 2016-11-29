@@ -6,8 +6,23 @@ package com.zdorovets;
  * Created on 19/10/16
  */
 public class MainClass {
-    static Classroom[] classrooms;
-    static Department[] departments;    
+    private static Classroom[] classrooms;
+    private static Department[] departments;    
+    
+    public static Classroom getClassroom(int i){
+    	return classrooms[i];
+    }
+    public static Department getDepartment(int i){
+    	return departments[i];
+    }
+    public static void setClassroom(int i, Classroom classroom){
+    	classrooms[i] = classroom;
+    }
+    public static void setDepartment(int i, Department department){
+    	departments[i] = department;
+    }
+    
+    
         /**
          * Главный метод
          */
@@ -38,6 +53,8 @@ public class MainClass {
         	errors = true;
         }
         if(!errors) {
+        	departments = new Department[depCount];
+        	classrooms = new Classroom[classCount];
         	Generator g = new Generator();
         	g.generateDepartments(depCount);
         	g.generateClasses(classCount, depCount, maxArea);

@@ -54,6 +54,6 @@ public class Classroom {
     
     @Override
     public String toString() {
-        return "Подразделение №"+this.number;
+        return "Помещение №"+this.number;
     }
 }

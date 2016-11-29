@@ -1,73 +1,73 @@
 package com.zdorovets;
 /**
- * Класс для подсчета данных
+ * РљР»Р°СЃСЃ РґР»СЏ РїРѕРґСЃС‡РµС‚Р° РґР°РЅРЅС‹С…
  * @author Evgeny Zdorovets
  * Created on 29/11/16
  */
 public class Counter {
     /**
-     * Выводит список помещений по всем подразделениям
-     * @param classCount максимальное кол-во помещений
-     * @param depCount максимальное кол-во подразделений
+     * Р’С‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РїРѕРјРµС‰РµРЅРёР№ РїРѕ РІСЃРµРј РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРј
+     * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
+     * @param depCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№
      */
 public void getClassroomNumbersByDepartments(int classCount, int depCount) {
 		int size;
         for (int i = 0; i < depCount; i++) {
-            System.out.println(MainClass.departments[i]);
-            size = MainClass.departments[i].getClasses().size();
+            System.out.println(MainClass.getDepartment(i));
+            size = MainClass.getDepartment(i).getClasses().size();
             for (int j = 0; j < size; j++)
-                System.out.println(MainClass.classrooms[MainClass.departments[i].getClasses().get(j)-1]);
+                System.out.println(MainClass.getClassroom(MainClass.getDepartment(i).getClasses().get(j)-1));
         }
     }
     /**
-     * Подсчитывает площадь учебных аудиторий по помещениям
-     * @param classCount максимальное кол-во помещений
+     * РџРѕРґСЃС‡РёС‚С‹РІР°РµС‚ РїР»РѕС‰Р°РґСЊ СѓС‡РµР±РЅС‹С… Р°СѓРґРёС‚РѕСЂРёР№ РїРѕ РїРѕРјРµС‰РµРЅРёСЏРј
+     * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
      */
 public void getAreaByClassrooms(int classCount) {
         int sum = 0;
         for (int i = 0; i < classCount; i++) {            	
-            if (MainClass.classrooms[i].getType().equals(ClassroomType.АУДИТОРИЯ))
-                sum += MainClass.classrooms[i].getArea();
+            if (MainClass.getClassroom(i).getType().equals(ClassroomType.РђРЈР”РРўРћР РРЇ))
+                sum += MainClass.getClassroom(i).getArea();
         }
-        System.out.println("Общая площадь аудиторий - " + sum + " кв.м.");
+        System.out.println("РћР±С‰Р°СЏ РїР»РѕС‰Р°РґСЊ Р°СѓРґРёС‚РѕСЂРёР№ - " + sum + " РєРІ.Рј.");
     }
     /**
-     * Подсчитывает площадь всех помещений по учебному заведению
-     * @param classCount максимальное кол-во помещений
+     * РџРѕРґСЃС‡РёС‚С‹РІР°РµС‚ РїР»РѕС‰Р°РґСЊ РІСЃРµС… РїРѕРјРµС‰РµРЅРёР№ РїРѕ СѓС‡РµР±РЅРѕРјСѓ Р·Р°РІРµРґРµРЅРёСЋ
+     * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
      */
 public void getAllAreas(int classCount) {
         int sum = 0;
         for (int i = 0; i < classCount; i++) {
-            sum += MainClass.classrooms[i].getArea();
+            sum += MainClass.getClassroom(i).getArea();
         }
-        System.out.println("Общая площадь помещений по всему заведению - " + sum + " кв.м.");
+        System.out.println("РћР±С‰Р°СЏ РїР»РѕС‰Р°РґСЊ РїРѕРјРµС‰РµРЅРёР№ РїРѕ РІСЃРµРјСѓ Р·Р°РІРµРґРµРЅРёСЋ - " + sum + " РєРІ.Рј.");
     }
     /**
-     * По индексу подразделения подсчитывает количество посадочных мест по подразделениям
-     * @param departmentIndex индекс подразделения
-     * @param classCount максимальное кол-во помещений
-     * @return количество посадочных мест по подразделениям
+     * РџРѕ РёРЅРґРµРєСЃСѓ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ РїРѕРґСЃС‡РёС‚С‹РІР°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕСЃР°РґРѕС‡РЅС‹С… РјРµСЃС‚ РїРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРј
+     * @param departmentIndex РёРЅРґРµРєСЃ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ
+     * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
+     * @return РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕСЃР°РґРѕС‡РЅС‹С… РјРµСЃС‚ РїРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРј
      */
 public int getLandingPlacesByDepartment(int departmentIndex, int classCount) {
         int sum = 0;
         for (int j = 0; j < classCount; j++) {
-            if (MainClass.classrooms[j].getDepartment().equals(MainClass.departments[departmentIndex])) {
-                sum += MainClass.classrooms[j].getLandingPlaceCount();
+            if (MainClass.getClassroom(j).getDepartment().equals(MainClass.getDepartment(departmentIndex))) {
+                sum += MainClass.getClassroom(j).getLandingPlaceCount();
             }
         }
         return sum;
     }
     /**
-     * Выводит список посадочных мест по подразделениям
-     * @param classCount максимальное кол-во помещений
-     * @param depCount максимальное кол-во подразделений
+     * Р’С‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РїРѕСЃР°РґРѕС‡РЅС‹С… РјРµСЃС‚ РїРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРј
+     * @param classCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРјРµС‰РµРЅРёР№
+     * @param depCount РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№
      */
 public void getLandingPlacesByDepartments(int classCount, int depCount) {
         int landingPlaces;
         for (int i = 0; i < depCount; i++) {
-            System.out.print(MainClass.departments[i]);
+            System.out.print(MainClass.getDepartment(i));
             landingPlaces = getLandingPlacesByDepartment(i, classCount);
-            System.out.println("количество посадочных мест - " + landingPlaces);
+            System.out.println("РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕСЃР°РґРѕС‡РЅС‹С… РјРµСЃС‚ - " + landingPlaces);
         }
     }
 }
