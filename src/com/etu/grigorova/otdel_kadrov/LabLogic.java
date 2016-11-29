@@ -18,17 +18,17 @@ public class LabLogic {
         this.service = service;
     }
 
-    void showAllEmployees () {
+    public void showAllEmployees () {
         System.out.println("\nСотрудники:\n");
         service.getEmployeeDao().findAll().forEach(System.out::println);
     }
 
-    void showAllUnits () {
+    public void showAllUnits () {
         System.out.println("\nПодразделения:\n");
         service.getUnitDao().findAll().forEach(System.out::println);
     }
 
-    void showAgeUnits () {
+    public void showAgeUnits () {
         System.out.println("\nСредний возраст сотрудников в подразделениях\n");
         for (UnitEntity currUnit : service.getUnitDao().findAll()) {
             System.out.println(currUnit);
@@ -60,7 +60,7 @@ public class LabLogic {
     /**
      * Provides dialog for employee to unit
      */
-    void assignEmployeeToUnit () {
+    public void assignEmployeeToUnit () {
         System.out.println("\nВведите id сотрудника, которого нужно добавить в подразделение\n");
         showAllEmployees();
         System.out.print("id: ");
@@ -87,7 +87,7 @@ public class LabLogic {
         }
     }
 
-    void findAllEmployeesByUnits () {
+     public void findAllEmployeesByUnits () {
         showAllUnits();
         System.out.println("\nВведите id интересующих подразделений: ");
         List<Integer> ids = parseIds();
@@ -102,7 +102,7 @@ public class LabLogic {
                 .collect(Collectors.toList());
     }
 
-    DaoDecor getService () {
+    public DaoDecor getService () {
         return service;
     }
 

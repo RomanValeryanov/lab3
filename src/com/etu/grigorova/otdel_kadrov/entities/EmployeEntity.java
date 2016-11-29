@@ -9,20 +9,30 @@ public class EmployeEntity extends OriginEntity {
 
     @Column (name = "FIRST_NAME", length = 50, nullable = false)
     private String fistName;
+    @Column (name = "LAST_NAME", length = 50, nullable = false)
+    private String lastName;
+    @Column (name = "FATHER_NAME", length = 50, nullable = false)
+    private String fatherName;
+    @Column (name = "SEX", length = 1)
+    private String sex;
+    @Column (name = "BIRTHDAY",columnDefinition = "DATE")
+    private Date birthday;
+    @Column (name = "ADDRESS", length = 50, nullable = false)
+    private String address;
+    @Column (name = "POSITION", length = 50, nullable = false)
+    private String position;
+    @ManyToOne
+    @JoinColumn (name = "UNIT_ID")
+    private UnitEntity unit;
+
     public String getFistName () {return fistName;}
     public void setFistName (String fistName) {this.fistName = fistName;}
 
-    @Column (name = "LAST_NAME", length = 50, nullable = false)
-    private String lastName;
-    public String getLastName () {
-        return lastName;
-    }
+    public String getLastName () {return lastName;}
     public void setLastName (String lastName) {
         this.lastName = lastName;
     }
 
-    @Column (name = "FATHER_NAME", length = 50, nullable = false)
-    private String fatherName;
     public String getFatherName () {
         return fatherName;
     }
@@ -30,8 +40,6 @@ public class EmployeEntity extends OriginEntity {
         this.fatherName = fatherName;
     }
 
-    @Column (name = "SEX", length = 1)
-    private String sex;
     public String getSex () {
         return sex;
     }
@@ -39,8 +47,6 @@ public class EmployeEntity extends OriginEntity {
         this.sex = sex;
     }
 
-    @Column (name = "BIRTHDAY",columnDefinition = "DATE")
-    private Date birthday;
     public Date getBirthday () {
         return birthday;
     }
@@ -48,19 +54,12 @@ public class EmployeEntity extends OriginEntity {
         this.birthday = birthday;
     }
 
-    @Column (name = "ADDRESS", length = 50, nullable = false)
-    private String address;
     public String getAddress () {return address;}
     public void setAddress (String address) {this.address = address;}
 
-    @Column (name = "POSITION", length = 50, nullable = false)
-    private String position;
     public String getPosition () {return position;}
     public void setPosition (String position) {this.position = position;}
 
-    @ManyToOne
-    @JoinColumn (name = "UNIT_ID")
-    private UnitEntity unit;
     public UnitEntity getUnit () {
         return unit;
     }

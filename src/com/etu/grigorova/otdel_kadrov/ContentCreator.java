@@ -41,7 +41,7 @@ public class ContentCreator {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
+            Date sqlStartDate = new Date(date.getTime());
             employee.setBirthday(sqlStartDate);
         }
         System.out.println("Введите должность работника: ");
@@ -52,7 +52,7 @@ public class ContentCreator {
         return employee;
     }
 
-    public static String readLine () {
+    private static String readLine () {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder result = new StringBuilder();
         try {
