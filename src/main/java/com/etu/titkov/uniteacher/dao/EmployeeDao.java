@@ -1,8 +1,8 @@
 package com.etu.titkov.uniteacher.dao;
 
 import com.etu.titkov.uniteacher.dao.common.GenericJpaDao;
-import com.etu.titkov.uniteacher.entities.EmployeeEntity;
-import com.etu.titkov.uniteacher.entities.UnitEntity;
+import com.etu.titkov.uniteacher.entities.Employee;
+import com.etu.titkov.uniteacher.entities.Unit;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -10,21 +10,21 @@ import java.util.List;
 
 /**
  * Employee DAO provides specific operations over
- * EmployeeEntity
+ * Employee
  *
- * @see EmployeeEntity
+ * @see Employee
  * @see GenericJpaDao
  *
  * @author Evgenii Ray
  */
-public class EmployeeDao extends GenericJpaDao<EmployeeEntity, Long> {
+public class EmployeeDao extends GenericJpaDao<Employee, Long> {
 
     public EmployeeDao() {
-        super(EmployeeEntity.class);
+        super(Employee.class);
     }
 
     public EmployeeDao(EntityManager manager) {
-        super(EmployeeEntity.class);
+        super(Employee.class);
         setEntityManager(manager);
     }
 
@@ -33,14 +33,14 @@ public class EmployeeDao extends GenericJpaDao<EmployeeEntity, Long> {
      *
      * @param units - list of unit entities
      *
-     * @return - <code>List<EmployeeEntity></code> - of found entities or null otherwise
+     * @return - <code>List<Employee></code> - of found entities or null otherwise
      */
     @SuppressWarnings("unchecked")
-    public List<EmployeeEntity> findAllEmployeesByUnits(List<UnitEntity> units) {
+    public List<Employee> findAllEmployeesByUnits(List<Unit> units) {
         Query query = getEntityManager()
                 .createQuery("select x from " + getPersistentClass().getSimpleName() + " x where x.unit IN :units")
                 .setParameter("units", units);
-        return (List<EmployeeEntity>) query.getResultList();
+        return (List<Employee>) query.getResultList();
     }
 
     /**
@@ -48,14 +48,14 @@ public class EmployeeDao extends GenericJpaDao<EmployeeEntity, Long> {
      *
      * @param ids - list of unit ids
      *
-     * @return - <code>List<EmployeeEntity></code> - of found entities or null otherwise
+     * @return - <code>List<Employee></code> - of found entities or null otherwise
      */
     @SuppressWarnings("unchecked")
-    public List<EmployeeEntity> findAllEmployeesByUnitsIds(List<Long> ids) {
+    public List<Employee> findAllEmployeesByUnitsIds(List<Long> ids) {
         Query query = getEntityManager()
                 .createQuery("select x from " + getPersistentClass().getSimpleName() + " x where x.unit.id IN :ids")
                 .setParameter("ids", ids);
-        return (List<EmployeeEntity>) query.getResultList();
+        return (List<Employee>) query.getResultList();
     }
 
 

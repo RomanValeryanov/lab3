@@ -2,10 +2,10 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.etu.titkov.uniteacher.entities.EmployeeEntity</class>
+        <class>com.etu.titkov.uniteacher.entities.Employee</class>
         <class>com.etu.titkov.uniteacher.entities.BaseEntity</class>
-        <class>com.etu.titkov.uniteacher.entities.SubjectEntity</class>
-        <class>com.etu.titkov.uniteacher.entities.UnitEntity</class>
+        <class>com.etu.titkov.uniteacher.entities.Subject</class>
+        <class>com.etu.titkov.uniteacher.entities.Unit</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/uni_teachers" />

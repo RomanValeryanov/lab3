@@ -1,9 +1,9 @@
 package com.etu.titkov.uniteacher;
 
 
-import com.etu.titkov.uniteacher.entities.EmployeeEntity;
-import com.etu.titkov.uniteacher.entities.SubjectEntity;
-import com.etu.titkov.uniteacher.entities.UnitEntity;
+import com.etu.titkov.uniteacher.entities.Employee;
+import com.etu.titkov.uniteacher.entities.Subject;
+import com.etu.titkov.uniteacher.entities.Unit;
 import com.etu.titkov.uniteacher.service.DaoDecorator;
 
 import java.util.Arrays;
@@ -49,12 +49,12 @@ public class AppController {
     public void assignSubjectForEmployee() {
         System.out.println("\nВыберите дисциплину, которую хотите назначить на сотрудников: \n");
         showAllSubjects();
-        SubjectEntity subject = service.getSubjectDao().findById((long) readInt());
+        Subject subject = service.getSubjectDao().findById((long) readInt());
         System.out.println("\nВыбрана дисциплина: " + subject + "\n");
         if (subject != null) {
             showAllEmployees();
             System.out.println("\nВведите id сотрудников через запятую, кому необходимо назначить дисциплину");
-            List<EmployeeEntity> employees = service.getEmployeeDao().findAllBySeveralIds(parseIds());
+            List<Employee> employees = service.getEmployeeDao().findAllBySeveralIds(parseIds());
             employees.forEach((emp) -> {
                 subject.getEmployees().add(emp);
                 emp.getSubjects().add(subject);
@@ -72,12 +72,12 @@ public class AppController {
     public void assignEmployeeToUnit() {
         System.out.println("\nВыберите сотрудника, которого нужно добавить в подразделение\n");
         showAllEmployees();
-        EmployeeEntity employee = service.getEmployeeDao().findById((long) readInt());
+        Employee employee = service.getEmployeeDao().findById((long) readInt());
         if (employee != null) {
             System.out.println("\nВыбран сотрудник: " + employee + "\n");
             System.out.println("\nВыберите подразделение куда нужно добавить сотрудника\n");
             showAllUnits();
-            UnitEntity unit = service.getUnitDao().findById((long) readInt());
+            Unit unit = service.getUnitDao().findById((long) readInt());
             if (unit != null) {
                 employee.setUnit(unit);
                 service.getEmployeeDao().save(employee);

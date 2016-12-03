@@ -1,8 +1,8 @@
 package com.etu.titkov.uniteacher.utils;
 
-import com.etu.titkov.uniteacher.entities.EmployeeEntity;
-import com.etu.titkov.uniteacher.entities.SubjectEntity;
-import com.etu.titkov.uniteacher.entities.UnitEntity;
+import com.etu.titkov.uniteacher.entities.Employee;
+import com.etu.titkov.uniteacher.entities.Subject;
+import com.etu.titkov.uniteacher.entities.Unit;
 
 import static com.etu.titkov.uniteacher.utils.UserInputReader.readLine;
 
@@ -14,8 +14,8 @@ import static com.etu.titkov.uniteacher.utils.UserInputReader.readLine;
  * @author Evgenii Ray
  */
 public class EntityInputFactory {
-    public static UnitEntity createUnit(){
-        UnitEntity unit = new UnitEntity();
+    public static Unit createUnit(){
+        Unit unit = new Unit();
         System.out.println("Введите имя подразделения: ");
         unit.setUnitName(readLine());
         System.out.println("Введите тип подразделения: ");
@@ -23,8 +23,8 @@ public class EntityInputFactory {
         return unit;
     }
 
-    public static EmployeeEntity createEmployee(){
-        EmployeeEntity emp = new EmployeeEntity();
+    public static Employee createEmployee(){
+        Employee emp = new Employee();
         System.out.println("Введите имя работника: ");
         emp.setFistName(readLine());
         System.out.println("Введите фамилию работника: ");
@@ -36,8 +36,8 @@ public class EntityInputFactory {
         return emp;
     }
 
-    public static SubjectEntity createSubject(){
-        SubjectEntity subject = new SubjectEntity();
+    public static Subject createSubject(){
+        Subject subject = new Subject();
         System.out.println("Введите название предмета: ");
         subject.setSubjectName(readLine());
         return subject;

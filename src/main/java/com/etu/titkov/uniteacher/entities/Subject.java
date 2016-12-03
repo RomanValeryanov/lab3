@@ -14,13 +14,13 @@ import java.util.List;
  */
 @Entity
 @Table(name = "SUBJECT")
-public class SubjectEntity extends BaseEntity {
+public class Subject extends BaseEntity {
 
     @Column(name = "SUBJECT_NAME")
     private String subjectName;
 
     @ManyToMany(mappedBy="subjects")
-    private List<EmployeeEntity> employees = new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
 
     public String getSubjectName() {
         return subjectName;
@@ -30,11 +30,11 @@ public class SubjectEntity extends BaseEntity {
         this.subjectName = subjectName;
     }
 
-    public List<EmployeeEntity> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(List<EmployeeEntity> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 

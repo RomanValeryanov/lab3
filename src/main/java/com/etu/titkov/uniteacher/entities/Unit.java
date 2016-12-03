@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "UNIT")
-public class UnitEntity extends BaseEntity {
+public class Unit extends BaseEntity {
 
     @Column(name="UNIT_NAME")
     private String unitName;
@@ -18,7 +18,7 @@ public class UnitEntity extends BaseEntity {
     private String unitType;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
-    private List<EmployeeEntity> employees;
+    private List<Employee> employees;
 
     public String getUnitName() {
         return unitName;
@@ -41,11 +41,11 @@ public class UnitEntity extends BaseEntity {
         return String.format("[Подразделение ID: %d]: [ Название подразделения: %s ]", getId(), unitName);
     }
 
-    public List<EmployeeEntity> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(List<EmployeeEntity> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 }

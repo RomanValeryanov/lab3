@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "EMPLOYEE")
-public class EmployeeEntity extends BaseEntity {
+public class Employee extends BaseEntity {
 
     @Column(name="FIRST_NAME")
     private String fistName;
@@ -30,14 +30,14 @@ public class EmployeeEntity extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "UNIT_ID")
-    private UnitEntity unit;
+    private Unit unit;
 
     @ManyToMany
     @Cascade(CascadeType.ALL)
     @JoinTable(name="EMP_SUBJECT",
             joinColumns=@JoinColumn(name="EMP_ID", referencedColumnName="ID"),
             inverseJoinColumns=@JoinColumn(name="SUB_ID", referencedColumnName="ID"))
-    private List<SubjectEntity> subjects = new ArrayList<>();
+    private List<Subject> subjects = new ArrayList<>();
 
     public String getFistName() {
         return fistName;
@@ -71,19 +71,19 @@ public class EmployeeEntity extends BaseEntity {
         this.position = position;
     }
 
-    public UnitEntity getUnit() {
+    public Unit getUnit() {
         return unit;
     }
 
-    public void setUnit(UnitEntity unit) {
+    public void setUnit(Unit unit) {
         this.unit = unit;
     }
 
-    public List<SubjectEntity> getSubjects() {
+    public List<Subject> getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(List<SubjectEntity> subjectList) {
+    public void setSubjects(List<Subject> subjectList) {
         this.subjects = subjectList;
     }
 

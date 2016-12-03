@@ -1,9 +1,9 @@
 package com.etu.titkov.uniteacher;
 
 
-import com.etu.titkov.uniteacher.entities.EmployeeEntity;
-import com.etu.titkov.uniteacher.entities.SubjectEntity;
-import com.etu.titkov.uniteacher.entities.UnitEntity;
+import com.etu.titkov.uniteacher.entities.Employee;
+import com.etu.titkov.uniteacher.entities.Subject;
+import com.etu.titkov.uniteacher.entities.Unit;
 import com.etu.titkov.uniteacher.utils.SessionManager;
 
 import static com.etu.titkov.uniteacher.utils.EntityInputFactory.*;
@@ -133,19 +133,19 @@ public class AppConsole {
 
         switch (readInt()) {
             case 1:
-                UnitEntity unit = createUnit();
+                Unit unit = createUnit();
                 unit = controller.getService().getUnitDao().save(unit);
                 System.out.println("\nДобавлено следующее поздразделение: " + unit + "\n");
                 showDataMenu();
                 break;
             case 2:
-                SubjectEntity subject = createSubject();
+                Subject subject = createSubject();
                 subject = controller.getService().getSubjectDao().save(subject);
                 System.out.println("\nДобавлен новый предмет: " + subject + "\n");
                 showDataMenu();
                 break;
             case 3:
-                EmployeeEntity emp = createEmployee();
+                Employee emp = createEmployee();
                 emp = controller.getService().getEmployeeDao().save(emp);
                 System.out.println("\nДобавлен новый работник: " + emp + "\n");
                 showDataMenu();
