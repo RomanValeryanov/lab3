@@ -13,7 +13,8 @@ import static com.etu.grigorova.otdel_kadrov.ContentCreator.createUnit;
 /**
  * Simple CLI GUI which use app controller for performing operations
  *
- * @author Evgenii Ray
+ * @author Alexandra Grigorova
+ * (with little help of other students) (((%
  */
 public class ConsoleOutput {
 
@@ -131,9 +132,4 @@ public class ConsoleOutput {
                 break;
         }
     }
-
-//    private void showAllEmployeesByUnits(){
-//        System.out.println("");
-//        controller.findAllEmployeesByUnits();
-//    }
 }

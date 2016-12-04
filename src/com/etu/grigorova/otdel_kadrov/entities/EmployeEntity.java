@@ -13,8 +13,8 @@ public class EmployeEntity extends OriginEntity {
     private String lastName;
     @Column (name = "FATHER_NAME", length = 50, nullable = false)
     private String fatherName;
-    @Column (name = "SEX", length = 1)
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
     @Column (name = "BIRTHDAY",columnDefinition = "DATE")
     private Date birthday;
     @Column (name = "ADDRESS", length = 50, nullable = false)
@@ -40,10 +40,10 @@ public class EmployeEntity extends OriginEntity {
         this.fatherName = fatherName;
     }
 
-    public String getSex () {
+    public Enum<Sex> getSex () {
         return sex;
     }
-    public void setSex (String sex) {
+    public void setSex (Sex sex) {
         this.sex = sex;
     }
 
@@ -80,3 +80,4 @@ public class EmployeEntity extends OriginEntity {
                 unit != null ? unit.toString() : "Подразделение: Не указано");
     }
 }
+

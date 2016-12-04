@@ -33,14 +33,12 @@ public class LabLogic {
         for (UnitEntity currUnit : service.getUnitDao().findAll()) {
             System.out.println(currUnit);
 
-            List<Integer> id = new ArrayList<>();
-            id.add(currUnit.getId());
+            List<Integer> ids = new ArrayList<>();
+            ids.add(currUnit.getId());
 
             Integer emplAges = 0;
             int count = 0;
-            for (EmployeEntity currEmployee : service.getEmployeeDao().findAllEmployeesByUnitsIds(id)) {
-//                List<Integer> employeeAges = new ArrayList<>();
-//                employeeAges.add(calculateAge(currEmployee.getBirthday()));
+            for (EmployeEntity currEmployee : service.getEmployeeDao().findAllEmployeesByUnitsIds(ids)) {
                 emplAges += calculateAge(currEmployee.getBirthday());
                 count++;
 //                System.out.println("возраст: " + calculateAge(currEmployee.getBirthday()));
