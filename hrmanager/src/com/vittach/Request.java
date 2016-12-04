@@ -168,7 +168,7 @@ public class Request {
         }
     }
 
-    void start() throws ParseException {
+    public void start() throws ParseException {
         while(true) {
             System.out.println("\n-----------------------------Жариков Виталий Владиславович 2307-----------------------------");
             System.out.println("1-generatePatient; 2-generateDoctors; 3-getAllDiagnosisByPatient; 4-getAllDiagnosisByPatients; 5-getAllPatientsToDoctorByDate; 6-getAllDoctorsByCurrentPatient");
