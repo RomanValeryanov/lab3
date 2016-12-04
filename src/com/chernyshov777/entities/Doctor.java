@@ -1,9 +1,9 @@
-package entities;
+package com.chernyshov777.entities;
 
 import java.util.Date;
 
 /**
- * entities.Doctor class
+ * com.chernyshov777.entities.Doctor class
  * @author Chernyshov Daniil
  */
 public class Doctor extends Person {

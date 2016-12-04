@@ -1,4 +1,4 @@
-package entities;
+package com.chernyshov777.entities;
 
 import java.util.Date;
 

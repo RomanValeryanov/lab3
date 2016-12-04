@@ -1,7 +1,7 @@
-package entities;
+package com.chernyshov777.entities;
 
 /**
- * entities.Diagnosis class
+ * com.chernyshov777.entities.Diagnosis class
  * @author Chernyshov Daniil
  */
 public class Diagnosis {

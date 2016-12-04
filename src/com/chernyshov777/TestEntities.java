@@ -1,6 +1,8 @@
-import entities.Diagnosis;
-import entities.Doctor;
-import entities.Patient;
+package com.chernyshov777;
+
+import com.chernyshov777.entities.Diagnosis;
+import com.chernyshov777.entities.Doctor;
+import com.chernyshov777.entities.Patient;
 
 import java.util.Date;
 

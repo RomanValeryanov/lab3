@@ -1,11 +1,11 @@
-package entities;
+package com.chernyshov777.entities;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * entities.Patient class
+ * com.chernyshov777.entities.Patient class
  * @author Chernyshov Daniil
  */
 public class Patient extends Person {
