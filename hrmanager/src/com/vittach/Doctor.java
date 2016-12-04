@@ -1,5 +1,8 @@
 package com.vittach;
 
+import com.vittach.enums.Post;
+import com.vittach.enums.Specialization;
+
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -7,27 +10,27 @@ import java.util.ArrayList;
  * Created by VITTACH on 23.10.2016.
  */
 public class Doctor extends Patient {
-    private String post;
-    private String specialization;
+    private Post post;
+    private Specialization specialization;
 
     private ArrayList<PatientsDate> patientsDates;
 
-    public Doctor(String lastName, String firstName, String patronymic, Date birthsday, String post, String specialization) {
+    public Doctor(String lastName, String firstName, String patronymic, Date birthsday, Post post, Specialization specialization) {
         super(lastName, firstName, patronymic, birthsday);
         this.post = post;
         patientsDates = new ArrayList<>();
         this.specialization = specialization;
     }
 
-    public String getPost() {
+    public Post getPost() {
         return post;
     }
 
-    public void setPost(String post) {
+    public void setPost(Post post) {
         this.post = post;
     }
 
-    public String getSpecialization(){
+    public Specialization getSpecialization(){
         return specialization;
     }
 
@@ -35,7 +38,7 @@ public class Doctor extends Patient {
         return patientsDates;
     }
 
-    public void setSpecialization(String specialization) {
+    public void setSpecialization(Specialization specialization) {
         this.specialization = specialization;
     }
 

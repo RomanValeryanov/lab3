@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import com.vittach.enums.Diagnosis;
+import com.vittach.enums.Post;
 import com.vittach.enums.Specialization;
 
 /**
@@ -76,15 +77,15 @@ public class Request {
         String patronymic = sc.nextLine();
         Date date = inputDate("Input doctor birthsday date (MM/dd/yy): ");
 
-        Diagnosis posts[] = Diagnosis.values();
+        Post posts[] = Post.values();
         Specialization specializations[] = Specialization.values();
 
         Doctor doctor = new Doctor(lastName,
                                     firstName,
                                     patronymic,
                                     date,
-                                    posts[r.nextInt(posts.length - 1)].toString(),
-                                    specializations[r.nextInt(specializations.length- 1)].toString());
+                                    posts[r.nextInt(posts.length - 1)],
+                                    specializations[r.nextInt(specializations.length- 1)]);
         countOfPatientsToDoctors=r.nextInt(patients.size())+ 1;
         for (int j = 0;j<countOfPatientsToDoctors; j++) {
             date = formatter.parse(String.valueOf(r.nextInt(31)) + "/" + String.valueOf(r.nextInt(12)) + "/" + "2016");
