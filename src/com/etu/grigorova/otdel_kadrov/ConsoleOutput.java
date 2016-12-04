@@ -63,7 +63,6 @@ public class ConsoleOutput {
                 break;
             case 2:
                 controller.findAllEmployeesByUnits();
-//                showAllEmployeesByUnits();
                 break;
             case 3:
                 showAllEmployees();
