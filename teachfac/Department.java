@@ -9,19 +9,19 @@ public class Department {
 		this.type = t;
 	}
 	
-	DepartmentName getDepName() {
+	public DepartmentName getDepName() {
 		return this.name;
 	}
 	
-	String getStringName() {
+	public String getStringName() {
 		return this.name.getStringName();
 	}
 	
-	DepartmentType getType() {
+	public DepartmentType getType() {
 		return this.type;
 	}
 	
-	String getStringType() {
+	public String getStringType() {
 		return this.type.getStringName();
 	}
 	
