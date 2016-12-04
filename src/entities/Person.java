@@ -12,6 +12,19 @@ public class Person {
     private String surName;
     private Date birthDay;
 
+    /**
+     * @param firstName firs name
+     * @param lastName  last name
+     * @param surName   surname
+     * @param birthDay birthday
+     */
+    public Person(String firstName, String lastName, String surName, Date birthDay) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.surName = surName;
+        this.birthDay = birthDay;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -24,11 +37,7 @@ public class Person {
         return surName;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
     public Date getBirthDay() {
-        return birthDay;
+        return new Date(birthDay.getTime());
     }
 }
