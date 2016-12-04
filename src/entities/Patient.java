@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,11 +11,16 @@ import java.util.List;
 public class Patient extends Person {
     private List<Diagnosis> diagnosisList;
 
+    public Patient(String firstName, String lastName, String surName, Date birthDay) {
+        super(firstName, lastName, surName, birthDay);
+        diagnosisList = new ArrayList<Diagnosis>();
+    }
+
     public List<Diagnosis> getDiagnosisList() {
         return diagnosisList;
     }
 
-    public void setDiagnosisList(List<Diagnosis> diagnosisList) {
-        this.diagnosisList = diagnosisList;
+    public void addDiagnosis(Diagnosis diagnosis) {
+        diagnosisList.add(diagnosis);
     }
 }
