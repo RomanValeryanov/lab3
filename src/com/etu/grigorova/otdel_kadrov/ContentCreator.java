@@ -65,9 +65,9 @@ public class ContentCreator {
     }
 
     private static Sex setGender (String gender) {
-        if (gender.equals("М")) {
+        if ("М".equals(gender)) {
             return Sex.М;
-        } else if (gender.equals("Ж")) {
+        } else if ("Ж".equals(gender)) {
             return Sex.Ж;
         } else {
             System.out.println("\nНекорректные данные, введите либо М, либо Ж");
