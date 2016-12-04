@@ -1,12 +1,23 @@
 package entities;
 
+import java.util.Date;
+
 /**
  * entities.Doctor class
  * @author Chernyshov Daniil
  */
 public class Doctor extends Person {
     private String position;
-    private String specialization;
+    public enum Speciality {
+        OPTHALMOLOGIST, SURGEON, ENT
+    }
+
+    public Speciality speciality;
+
+    public Doctor(String firstName, String lastName, String surName, Date birthDay, String position) {
+        super(firstName, lastName, surName, birthDay);
+        this.position = position;
+    }
 
     public String getPosition() {
         return position;
@@ -16,11 +27,11 @@ public class Doctor extends Person {
         this.position = position;
     }
 
-    public String getSpecialization() {
-        return specialization;
+    public Speciality getSpeciality() {
+        return speciality;
     }
 
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+    public void setSpeciality(Speciality speciality) {
+        this.speciality = speciality;
     }
 }
