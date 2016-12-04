@@ -9,6 +9,15 @@ public class Diagnosis {
     private String description;
     private Doctor appointedBy;
 
+    public Diagnosis() {
+    }
+
+    public Diagnosis(String diagnosisName, String description, Doctor appointedBy) {
+        this.diagnosisName = diagnosisName;
+        this.description = description;
+        this.appointedBy = appointedBy;
+    }
+
     public String getDiagnosisName() {
         return diagnosisName;
     }
