@@ -1,12 +1,12 @@
 package com.vittach;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import com.vittach.enums.Diagnosis;
 import com.vittach.enums.Specialization;
 
