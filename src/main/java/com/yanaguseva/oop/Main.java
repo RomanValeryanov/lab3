@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         List<Book> books = initBooks();
         List<Reader> readers = initReaders();
-        LibraryManager manager = new LibraryManager(books, readers);
+        LibraryManager manager = new LibraryManager(books);
 
         manager.giveBook(readers.get(0), books.get(0));
         manager.giveBook(readers.get(0), books.get(1));

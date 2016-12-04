@@ -5,11 +5,9 @@ import java.util.List;
 
 public class LibraryManager {
     private List<Book> bookList;
-    private List<Reader> readerList;
 
-    public LibraryManager(List<Book> bookList, List<Reader> readerList) {
+    public LibraryManager(List<Book> bookList) {
         this.bookList = bookList;
-        this.readerList = readerList;
     }
 
     public void giveBook(Reader reader, Book book) {
