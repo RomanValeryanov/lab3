@@ -11,7 +11,7 @@ public class Actions {
 			System.out.println("\t" + b.getBookName());
 	}
 	
-	void getBooksByReaders(Reader [] rs) {
+	public void getBooksByReaders(Reader [] rs) {
 		for(Reader r: rs) {
 			this.getBooksByReader(r);
 		}

@@ -10,10 +10,6 @@ public class Main {
 	public static void main(String[] args) {
 		Actions objAc = new Actions();
 		
-		Book nef = new Book("George Orwell", "1984",  1949, 150, false, "is a dystopian novel by English author George Orwell published in 1949",
-				new Date(2015 - 1900, 4, 13), new Date(2015 - 1900, 5, 13));
-		Book wap = new Book("Leo Tolstoy", "War and Peace",  1869, 300, false, "It is regarded as one of the central works of world literature",
-				new Date(2014 - 1900, 3, 15), new Date(2014 - 1900, 4, 15));
 		Book woomen = new Book("Charles Bukowski", "Women",  1978, 200, true, "Women is centered on Chinaski's later life, as a celebrated poet and writer, not as a dead-end lowlife",
 				new Date(2016 - 1900, 3, 12), new Date(2016 - 1900, 4, 12));
 		
