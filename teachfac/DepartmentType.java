@@ -7,7 +7,7 @@ public enum DepartmentType {
 	
 	private final String depType;	
 	
-	private DepartmentType(final String dt) {
+	DepartmentType(final String dt) {
 		this.depType = dt;
 	}
 	

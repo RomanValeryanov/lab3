@@ -7,7 +7,7 @@ public class Operations {
 	public void getDisciplineByEmployee(Employee empl) {
 		System.out.println("Disciplines for " + empl.getSurname() + " " + empl.getName() + " " + empl.getPatronymic());
 		for(Discipline dis : empl.getDisciplines()) {
-			System.out.println("\t" + dis.getStringDiscipline());
+			System.out.println("\t" + dis.getDisciplineName());
 		}
 	}
 	
@@ -17,8 +17,8 @@ public class Operations {
 		}
 	}
 	
-	public void getEmployeesByDepartment(Employee[] emplArr, DepartmentName dn) {
-		System.out.println("Employees in department " + dn.getStringName());
+	public void getEmployeesByDepartment(Employee[] emplArr, String dn) {
+		System.out.println("Employees in department " + dn);
 		for(Employee empl:emplArr) {
 			for(Department dp: empl.getDepartments()) {
 				if(dn == dp.getDepName())
@@ -27,27 +27,27 @@ public class Operations {
 		}
 	}
 	
-	public void getEmployeesByDepartments(Employee[] emplArr, DepartmentName[] dn){
-		for(DepartmentName depN : dn) {
+	public void getEmployeesByDepartments(Employee[] emplArr, String[] dn){
+		for(String depN : dn) {
 			this.getEmployeesByDepartment(emplArr, depN);
 		}
 	}
 	
-	public void getDisciplinesByDepartment(Employee[] emplArr, DepartmentName dn) {
+	public void getDisciplinesByDepartment(Employee[] emplArr, String dn) {
 		for(Employee empl: emplArr) {
 			for(Department dp : empl.getDepartments()) {
 				if(dp.getDepName() == dn) {
-					System.out.println("Disciplines read by " + empl.getSurname() + " " + empl.getName() + " " + empl.getPatronymic() + " in " + dp.getStringName());
+					System.out.println("Disciplines read by " + empl.getSurname() + " " + empl.getName() + " " + empl.getPatronymic() + " in " + dp.getDepName());
 					for(Discipline dis: empl.getDisciplines())
-						System.out.println("\t" + dis.getStringDiscipline());
+						System.out.println("\t" + dis.getDisciplineName());
 				}
 					
 			}
 		}
 	}
 	
-	public void getDisciplinesByDepartments(Employee[] emplArr, DepartmentName[] dn) {
-		for(DepartmentName dep : dn)
+	public void getDisciplinesByDepartments(Employee[] emplArr, String[] dn) {
+		for(String dep : dn)
 			this.getDisciplinesByDepartment(emplArr, dep);
 	}
 }

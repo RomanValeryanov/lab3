@@ -12,7 +12,6 @@ public class Employee {
 		private String addr;
 		private EmployeesPosition pos;
 		private ArrayList<Department> depTypes = new  ArrayList<Department>();
-		
 		private ArrayList<Discipline> disTypes = new ArrayList<Discipline>();
 		
 		

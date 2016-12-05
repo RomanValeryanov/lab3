@@ -2,17 +2,14 @@ package teachfac;
 
 public class Discipline {
 
-	private DisciplineType id; // number of discipline
+	private String name; // number of discipline
 	
-	Discipline(DisciplineType type) {
-		this.id = type;
+	Discipline(String n) {
+		this.name = n;
 	}
 	
-	public DisciplineType getIdDiscipline() {
-		return this.id;
+	public String getDisciplineName() {
+		return this.name;
 	}
 	
-	public String getStringDiscipline() {
-		return this.id.getStringName();
-	}
 }

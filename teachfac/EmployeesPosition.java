@@ -10,7 +10,7 @@ public enum EmployeesPosition {
 	
 	private final String empPos;	
 	
-	private EmployeesPosition(final String ep) {
+	EmployeesPosition(final String ep) {
 		this.empPos = ep;
 	}
 	

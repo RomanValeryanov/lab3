@@ -6,22 +6,22 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Department [] ivDeps = {new Department(DepartmentName.DEP_CHEMISTRY, DepartmentType.EDUC_TYPE)};
+		Department [] ivDeps = {new Department("Departament of Chemistry", DepartmentType.EDUC_TYPE)};
 		
-		Department [] elDeps = {new Department(DepartmentName.DEP_CHEMISTRY, DepartmentType.EDUC_TYPE),
-								new Department(DepartmentName.DEP_PHYSIC, DepartmentType.EDUC_TYPE),
-								new Department(DepartmentName.DEP_MATH, DepartmentType.EDUC_TYPE)};
+		Department [] elDeps = {new Department("Departament of Chemistry", DepartmentType.EDUC_TYPE),
+								new Department("Departament of Physics", DepartmentType.EDUC_TYPE),
+								new Department("Departament of Mathematics", DepartmentType.EDUC_TYPE)};
 		
-		Department [] irDeps = {new Department(DepartmentName.DEP_MUSIC, DepartmentType.EDUC_TYPE)};
+		Department [] irDeps = {new Department("Departament of Music", DepartmentType.EDUC_TYPE)};
 		
-		Department [] anDeps = {new Department(DepartmentName.DEP_MATH, DepartmentType.EDUC_TYPE),
-								 new Department(DepartmentName.DEP_PHYSIC, DepartmentType.EDUC_TYPE)
+		Department [] anDeps = {new Department("Departament of Mathematics", DepartmentType.EDUC_TYPE),
+								 new Department("Departament of Physics", DepartmentType.EDUC_TYPE)
 		};
 		
-		Discipline [] ivDisc = {new Discipline(DisciplineType.CHEMISTRY)};
-		Discipline [] elDisc = {new Discipline(DisciplineType.CHEMISTRY), new Discipline(DisciplineType.PHYSIC), new Discipline(DisciplineType.MATH)};
-		Discipline [] irDisc = {new Discipline(DisciplineType.MUSIC)};
-		Discipline [] anDisc = {new Discipline(DisciplineType.MATH), new Discipline(DisciplineType.PHYSIC)};
+		Discipline [] ivDisc = {new Discipline("Chemistry")};
+		Discipline [] elDisc = {new Discipline("Chemistry"), new Discipline("Physic"), new Discipline("Mathematics")};
+		Discipline [] irDisc = {new Discipline("Music")};
+		Discipline [] anDisc = {new Discipline("Mathematics"), new Discipline("Physic")};
 		
 		@SuppressWarnings("deprecation")
 		Employee[] empArr = {
@@ -40,13 +40,13 @@ public class Main {
 		}; 
 		
 		Operations opObj = new Operations();
-		DepartmentName []dnArr = {DepartmentName.DEP_CHEMISTRY,DepartmentName.DEP_PHYSIC, DepartmentName.DEP_MATH};
-		//opObj.getDisciplineByEmployee(empArr[0]);
-		//opObj.getDisciplineByEmployees(empArr);
-		//opObj.getEmployeesByDepartment(empArr, DepartmentName.DEP_MATH);
-		//opObj.getEmployeesByDepartments(empArr, dnArr);
-		//opObj.getDisciplinesByDepartment(empArr, DepartmentName.DEP_MATH);
-		opObj.getDisciplinesByDepartments(empArr, dnArr);
+		String []dnArr = {"Departament of Chemistry", "Departament of Physics", "Departament of Mathematics"};
+		opObj.getDisciplineByEmployee(empArr[0]);
+//		opObj.getDisciplineByEmployees(empArr);
+//		opObj.getEmployeesByDepartment(empArr, "Departament of Mathematics");
+		opObj.getEmployeesByDepartments(empArr, dnArr);
+//		opObj.getDisciplinesByDepartment(empArr, "Departament of Mathematics");
+//		opObj.getDisciplinesByDepartments(empArr, dnArr);
 	}	
 
 }
