@@ -65,6 +65,10 @@ public class MainClass {
         return result;
     }
 
+    /**
+     * Main method
+     * @param args []
+     */
     public static void main(String[] args){
         generateData(100); // generate 100 random rooms
         for (Unit unit : units) // get all room names in every units
