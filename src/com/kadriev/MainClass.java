@@ -67,7 +67,7 @@ public class MainClass {
 
     /**
      * Main method
-     * @param args []
+     * @param args [] command line arguments
      */
     public static void main(String[] args){
         generateData(100); // generate 100 random rooms
