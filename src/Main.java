@@ -3,6 +3,8 @@ package lab3;
 import java.util.ArrayList;
 import java.util.List;
 
+	//Вариант №7 Телефонный узел связи
+
 public class Main {
 	public static void main(String[] args) {
 		List<Subscriber> subscribers = new ArrayList<>();
